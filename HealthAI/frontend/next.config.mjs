@@ -4,7 +4,7 @@ const config = {
     return [
       {
         source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/:path*`
+        destination: "https://seng430-project-last-production.up.railway.app/api/:path*"
       }
     ]
   }
