@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS Custom Properties — Brand & Clinical Palette
+   ============================================================ */
+:root {
+  /* Brand colours */
+  --color-brand-navy: #1B3A6B;
+  --color-brand-teal: #0D9488;
+  --color-brand-blue: #2563EB;
+  --color-brand-light: #EFF6FF;
+
+  /* Clinical status */
+  --color-clinical-success: #059669;
+  --color-clinical-warning: #D97706;
+  --color-clinical-danger: #DC2626;
+  --color-clinical-info: #0284C7;
+
+  /* Surface */
+  --color-surface: #F8FAFC;
+  --color-surface-card: #FFFFFF;
+  --color-border-subtle: #E2E8F0;
+
+  /* shadcn/ui CSS variables */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 20%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 20%;
+
+  --primary: 217 91% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 174 65% 32%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 174 65% 32%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 45%;
+
+  --radius: 0.5rem;
+}
+
+/* ============================================================
+   Base Layer
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Focus-visible rings in brand-blue */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-blue ring-offset-2 ring-offset-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight text-brand-navy;
+  }
+
+  .font-serif h1,
+  .font-serif h2,
+  .font-serif h3,
+  h1.font-serif,
+  h2.font-serif,
+  h3.font-serif {
+    font-family: var(--font-merriweather), Merriweather, Georgia, serif;
+  }
+
+  /* Clinical text utility */
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors;
+  }
+}
+
+/* ============================================================
+   Scrollbar — subtle, thin
+   ============================================================ */
+@layer utilities {
+  /* Chrome, Safari, Edge */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-subtle);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-subtle) transparent;
+  }
+}
+
+/* ============================================================
+   Component layer — common patterns
+   ============================================================ */
+@layer components {
+  /* Clinical step container */
+  .step-container {
+    @apply max-w-5xl mx-auto px-4 py-8;
+  }
+
+  /* Step heading */
+  .step-heading {
+    @apply text-2xl font-bold text-brand-navy mb-1;
+  }
+
+  .step-subheading {
+    @apply text-sm text-muted-foreground mb-6;
+  }
+
+  /* Status dots */
+  .status-dot {
+    @apply inline-block w-2.5 h-2.5 rounded-full;
+  }
+
+  .status-dot-good {
+    @apply bg-clinical-success;
+  }
+
+  .status-dot-warning {
+    @apply bg-clinical-warning;
+  }
+
+  .status-dot-danger {
+    @apply bg-clinical-danger;
+  }
+
+  /* Clinical info panel */
+  .clinical-panel {
+    @apply rounded-lg border border-brand-light bg-brand-light/50 p-4;
+  }
+
+  /* Metric value large */
+  .metric-value {
+    @apply text-4xl font-bold tabular-nums;
+  }
+
+  /* Subtle divider */
+  .divider {
+    @apply border-t border-border-subtle my-6;
+  }
+}

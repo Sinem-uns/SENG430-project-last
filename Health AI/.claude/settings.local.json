@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python data/generate_data.py)",
+      "Bash(python -m py_compile main.py app/schemas/api.py app/services/preprocessing.py app/services/models.py app/services/metrics.py app/services/pdf_generator.py app/routes/dataset.py app/routes/train.py app/routes/explain.py app/routes/bias.py app/routes/certificate.py)",
+      "Bash(python -c \":*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(python -m pytest tests/ -v --tb=short)",
+      "Bash(npx vitest:*)",
+      "Bash(curl -s http://localhost:8000/api/health)",
+      "Bash(python -m uvicorn --version)",
+      "Bash(echo \"PATH: $PATH\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(curl -s \"http://localhost:8000/api/dataset/builtin/cardiology\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Cardiology: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(curl -s \"http://localhost:8000/api/dataset/builtin/diabetes\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Diabetes: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/cardiology\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/diabetes\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/breast_cancer\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Breast Cancer: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/fetal_health\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Fetal Health: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/parkinsons\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Parkinsons: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(curl -s \"http://localhost:8000/api/datasets/sepsis\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''Sepsis: {d[\"\"rowCount\"\"]} rows, {len\\(d[\"\"columns\"\"]\\)} columns''''\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)[:5]\\)\")",
+      "Bash(python -m pytest tests/ -q)",
+      "Bash(tasklist)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 1340 //F)"
+    ]
+  }
+}
